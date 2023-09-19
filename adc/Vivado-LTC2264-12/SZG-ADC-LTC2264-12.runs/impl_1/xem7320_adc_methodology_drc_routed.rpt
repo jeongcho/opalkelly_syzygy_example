@@ -1,0 +1,159 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Wed Sep 20 02:28:14 2023
+| Host         : jeongcho-work running 64-bit major release  (build 9200)
+| Command      : report_methodology -file xem7320_adc_methodology_drc_routed.rpt -pb xem7320_adc_methodology_drc_routed.pb -rpx xem7320_adc_methodology_drc_routed.rpx
+| Design       : xem7320_adc
+| Device       : xc7a75tfgg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 19
++-----------+------------------+--------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                            | Violations |
++-----------+------------------+--------------------------------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                            | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                           | 1          |
+| PDRC-190  | Warning          | Suboptimally placed synchronized register chain        | 1          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                      | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                          | 9          |
+| TIMING-24 | Warning          | Overridden Max delay datapath only                     | 2          |
+| TIMING-28 | Warning          | Auto-derived clock referenced by a timing constraint   | 1          |
+| XDCC-7    | Warning          | Scoped Clock constraint overwritten on the same source | 1          |
+| XDCH-1    | Warning          | Hold option missing in multicycle path constraint      | 2          |
++-----------+------------------+--------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin okHI/core0/core0/a0/d0/dna0/CLK is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell okHI/core0/core0/l9ca09c625f64b90bed25f2b6c26f6e53[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[2]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[3]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[4]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[5]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[6]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[7]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[8]/PRE,
+okHI/core0/core0/a0/l4f8cd1ab062f5571ff66db47e3d281bf_reg[9]/CLR,
+okHI/core0/core0/a0/l8733ba0cb25077d8c78e1b1549a80eef_reg/CLR,
+okHI/core0/core0/a0/l90ce46b343647bab4d280b5afc506219_reg/CLR,
+okHI/core0/core0/a0/l9ca09c625f64b90bed25f2b6c26f6e53_reg[0]/CLR,
+okHI/core0/core0/a0/l9ca09c625f64b90bed25f2b6c26f6e53_reg[1]/CLR,
+okHI/core0/core0/a0/l9ca09c625f64b90bed25f2b6c26f6e53_reg[2]/CLR,
+okHI/core0/core0/a0/l9ca09c625f64b90bed25f2b6c26f6e53_reg[3]/CLR,
+okHI/core0/core0/a0/le7badcf1256ff8aabbffe7a6a1b38b5f_reg_inv/PRE
+ (the first 15 of 60 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X5Y41 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An output delay is missing on led[0] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on led[2] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on led[3] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on led[4] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on led[5] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on led[6] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on led[7] relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on okAA relative to the rising and/or falling clock edge(s) of okUH0.
+Related violations: <none>
+
+TIMING-24#1 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 41 in the Timing Constraints window in Vivado IDE) between clocks adc_data_clk and mmcm0_clk0 overrides a set_max_delay -datapath_only (position 46). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#2 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 41 in the Timing Constraints window in Vivado IDE) between clocks mmcm0_clk0 and adc_data_clk overrides a set_max_delay -datapath_only (position 44). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-28#1 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock mmcm0_clk0 is referenced by name inside timing constraint (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins okHI/mmcm0/CLKOUT0]
+Related violations: <none>
+
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 5.000 -name sys_clk [get_ports sys_clkp] (Source: D:/Work/opalkelly_syzygy/adc/gateware/xem7320-ltc2264-12.xdc (Line: 105))
+Previous: create_clock -period 5.000 [get_ports sys_clkp] (Source: d:/Work/opalkelly_syzygy/adc/Vivado-LTC2264-12/SZG-ADC-LTC2264-12.gen/sources_1/ip/enc_clk/enc_clk.xdc (Line: 56))
+Related violations: <none>
+
+XDCH-1#1 Warning
+Hold option missing in multicycle path constraint  
+A multicycle constraint has been set to override the setup relationship, but no multicycle constraint has been defined to change the hold relationship. As a result, the default hold for those paths is derived from the setup and may not be evaluated as expected.
+set_multicycle_path -setup -from [get_ports {okUHU[*]}] 2
+D:/Work/opalkelly_syzygy/adc/gateware/xem7320-ltc2264-12.xdc (Line: 85)
+Related violations: <none>
+
+XDCH-1#2 Warning
+Hold option missing in multicycle path constraint  
+A multicycle constraint has been set to override the setup relationship, but no multicycle constraint has been defined to change the hold relationship. As a result, the default hold for those paths is derived from the setup and may not be evaluated as expected.
+set_multicycle_path -setup -from [get_ports {okUH[*]}] 2
+D:/Work/opalkelly_syzygy/adc/gateware/xem7320-ltc2264-12.xdc (Line: 81)
+Related violations: <none>
+
+
